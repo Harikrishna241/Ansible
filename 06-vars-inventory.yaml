@@ -1,5 +1,6 @@
 - name: checking the variables
   hosts: localhost
+  become: yes
   # vars_prompt:
   # - name: user 
   #   prompt: please enter the user name

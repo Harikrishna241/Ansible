@@ -1,5 +1,5 @@
 - name: data types
-  hosts: localhosts
+  hosts: localhost
   vars: 
     COURSE: dEVoPS
     Tools: 

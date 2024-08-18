@@ -1,5 +1,6 @@
 [web]
 72-31-34-81
+[web:vars]
 user: "Aakarsh"
 course: "engineer"
 time: 10

@@ -1,11 +1,18 @@
-- name: installation of nginx
+- name: checking the variables
   hosts: localhost
   vars: 
     user: "hari"
     course: "devops"
     time: 3
   tasks:
-  - name: installation of nginx package
+  - name: printing the variables from locally
+    ansible.builtin.debug:
+      msg: user name is {{user}} joined {{course}} for {{time}}
+  - name: printing the variables from locally
+    vars:
+      user: "krishna"
+      course: "linux"
+      duration: 4
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}
       

@@ -1,5 +1,5 @@
 - name: checking the variables
-  hosts: web
+  hosts: localhosr
   vars: 
     user: "hari"
     course: "devops"
@@ -9,10 +9,8 @@
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}
   - name: printing the variables from locally
-    # vars:
-    #   user: "krishna"
-    #   course: "linux"
-    #   time: 4
+    vars:
+      - inventory.ini
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}
       

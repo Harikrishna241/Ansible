@@ -14,5 +14,5 @@
   tasks:
   - name: printing the different varaible 
     ansible.builtin.debug:
-      msg:course is {{COURSE}} and tools are {{Tools}} with experience{{Esperience}} and is this realtime{{Realproject}}
+      msg: "course is {{COURSE}} and tools are {{Tools}} with experience{{Esperience}} and is this realtime{{Realproject}}""
   

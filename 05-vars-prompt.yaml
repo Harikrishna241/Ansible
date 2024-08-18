@@ -7,7 +7,7 @@
   - name: course 
     prompt: please enter the course name
     private: false
-  - name: user 
+  - name: time 
     prompt: please enter the user name
     private: true
   

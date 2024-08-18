@@ -1,11 +1,11 @@
 - name: checking the variables
   hosts: localhost
-  vars: 
-    user: "hari"
-    course: "devops"
-    time: 3
-  vars_file:
-    - inventory.ini
+  # vars: 
+  #   user: "hari"
+  #   course: "devops"
+  #   time: 3
+  # vars_file:
+  #   - inventory.ini
   tasks:
   - name: printing the variables from locally
     ansible.builtin.debug:

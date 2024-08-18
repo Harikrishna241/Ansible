@@ -1,5 +1,5 @@
 - name: checking the variables
-  hosts: localhosr
+  hosts: localhost
   vars: 
     user: "hari"
     course: "devops"

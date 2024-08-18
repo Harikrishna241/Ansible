@@ -9,10 +9,10 @@
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}
   - name: printing the variables from locally
-    vars:
-      user: "krishna"
-      course: "linux"
-      time: 4
+    # vars:
+    #   user: "krishna"
+    #   course: "linux"
+    #   time: 4
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}
       

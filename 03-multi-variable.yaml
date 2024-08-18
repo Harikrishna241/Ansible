@@ -1,0 +1,11 @@
+- name: installation of nginx
+  hosts: localhost
+  vars: 
+    user: "hari"
+    course: "devops"
+    time: 3
+  tasks:
+  - name: installation of nginx package
+    ansible.builtin.debug:
+      msg: user name is {{user}} joined {{course}} for {{time}}
+      

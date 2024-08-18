@@ -1,0 +1,13 @@
+- name: checking the variables
+  hosts: localhost
+  vars_files:
+  - vars.yaml 
+
+  tasks:
+  - name: printing the variables from locally
+    ansible.builtin.debug:
+      msg: user name is {{user}} joined {{course}} for {{time}}
+  # - name: printing the variables from locally
+  #   ansible.builtin.debug:
+  #     msg: user name is {{user}} joined {{course}} for {{time}}
+      

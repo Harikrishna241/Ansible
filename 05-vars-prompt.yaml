@@ -1,0 +1,17 @@
+- name: checking the variables
+  hosts: localhost
+  vars_prompt:
+  - name: user 
+    prompt: please enter the user name
+    private: false
+  - name: course 
+    prompt: please enter the course name
+    private: false
+  - name: user 
+    prompt: please enter the user name
+    private: true
+  
+  tasks:
+  - name: printing the variables from locally
+    ansible.builtin.debug:
+      msg: user name is {{user}} joined {{course}} for {{time}}

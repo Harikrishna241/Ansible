@@ -7,7 +7,5 @@
   - name: printing the variables from locally
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}
-  # - name: printing the variables from locally
-  #   ansible.builtin.debug:
-  #     msg: user name is {{user}} joined {{course}} for {{time}}
+
       

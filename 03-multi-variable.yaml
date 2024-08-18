@@ -14,5 +14,5 @@
       course: "linux"
       duration: 4
     ansible.builtin.debug:
-      msg: user name is {{user}} joined {{course}} for {{time}}
+      msg: user name is {{user}} joined {{course}} for {{duration}}
       

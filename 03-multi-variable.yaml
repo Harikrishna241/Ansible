@@ -9,7 +9,7 @@
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}
   - name: printing the variables from locally
-    vars:
+    vars_file:
       - inventory.ini
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}

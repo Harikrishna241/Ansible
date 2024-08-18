@@ -1,0 +1,8 @@
+- name: checking the variables
+  hosts: localhost
+  become: yes
+  
+  tasks:
+  - name: printing the variables from argument
+    ansible.builtin.debug:
+      msg: user name is {{user}} joined {{course}} for {{time}}

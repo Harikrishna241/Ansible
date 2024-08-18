@@ -4,13 +4,13 @@
     user: "hari"
     course: "devops"
     time: 3
+  vars_file:
+    - inventory.ini
   tasks:
   - name: printing the variables from locally
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}
   - name: printing the variables from locally
-    vars_file:
-    - inventory.ini
     ansible.builtin.debug:
       msg: user name is {{user}} joined {{course}} for {{time}}
       

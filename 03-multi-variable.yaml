@@ -12,7 +12,7 @@
     vars:
       user: "krishna"
       course: "linux"
-      duration: 4
+      time: 4
     ansible.builtin.debug:
-      msg: user name is {{user}} joined {{course}} for {{duration}}
+      msg: user name is {{user}} joined {{course}} for {{time}}
       

@@ -74,6 +74,7 @@
       login_password: ExpenseApp@1
       target: /app/schema/backend.sql
       state: dump
+      name: all
   
   # - name: restart the backend service
   #   ansible.builtin.service:

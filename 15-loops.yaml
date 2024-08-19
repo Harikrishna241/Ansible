@@ -3,7 +3,7 @@
   become: yes
   tasks:
     - name: printing the loops
-      ansible.debug,bultin:
+      ansible.debug,builtin:
         msg: {{item}}
       loop:
       - LINUX

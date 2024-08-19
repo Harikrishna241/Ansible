@@ -16,3 +16,54 @@
       state: absent
       path: /usr/share/nginx/html/*
   
+ - name: Download backend code to tmp
+    ansible.builtin.get_url:
+      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+      dest: /tmp/frontend.zip
+      mode: '0440'
+  
+  - name: Extract foo.tgz into /var/lib/foo
+    ansible.builtin.unarchive:
+      src: /tmp/frontend.zip
+      dest: /usr/share/nginx/html/
+      remote_src: yes
+  - name: Copy file with owner and permissions
+    ansible.builtin.copy:
+      src: /home/ec2-user/Ansible/expense/expense.conf
+      dest: /etc/nginx/default.d/expense.conf
+  - name: restsrt the service
+    ansible.builtin.service:
+      name: nginx
+      state: restarted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

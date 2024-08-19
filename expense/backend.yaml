@@ -36,32 +36,34 @@
       dest: /app
       remote_src: yes
 
-  # - name: installing the npm modules
-  #   ansible.builtin.dnf: npm install
-  #   args:
-  #     chdir: /app
-  
+  - name: installing the npm modules
+    ansible.builtin.pip: 
+      name: 
+      - PyMySQL
+      - cryptography
+      executable: pip3.9
+
   - name: Copy file with owner and permissions
     ansible.builtin.copy:
       src: /home/ec2-user/Ansible/expense/backend.service
       dest: /etc/systemd/system/backend.service
 
-     # systemctl daemon-reload
-  - name: this is for system deamon reload  
-    ansible.builtin.systemd_service:
-      state: restarted
-      daemon_reload: true
+  #    # systemctl daemon-reload
+  # - name: this is for system deamon reload  
+  #   ansible.builtin.systemd_service:
+  #     state: restarted
+  #     daemon_reload: true
 
-  - name: enabling the backend service
-    ansible.builtin.service:
-      name: backend
-      state: started
-      enabled: yes
+  # - name: enabling the backend service
+  #   ansible.builtin.service:
+  #     name: backend
+  #     state: started
+  #     enabled: yes
 
-  - name: installation of mysql 
-    ansible.builtin.dnf:
-      name: mysql
-      state: latest
+  # - name: installation of mysql 
+  #   ansible.builtin.dnf:
+  #     name: mysql
+  #     state: latest
   
   # - name: uploading the schema
   #   ansible.builtin.command: "mysql -h 54.161.92.9 -uroot -pExpenseApp@1 < /app/schema/backend.sql"
@@ -70,11 +72,12 @@
       login_host: "db host adress"
       login_user: root
       login_password: ExpenseApp@1
+      target: /app/schema/backend.sql
       state: dump
   
-  - name: restart the backend service
-    ansible.builtin.service:
-      name: backend
-      state: restarted
+  # - name: restart the backend service
+  #   ansible.builtin.service:
+  #     name: backend
+  #     state: restarted
 
       

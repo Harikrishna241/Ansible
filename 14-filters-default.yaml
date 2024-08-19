@@ -21,4 +21,20 @@
     ansible.builtin.debug:
       msg: "dict valuses after converting : {{My_dict | dict2items}}"
   
-    
+- name: convert dictinary to list 
+  hosts: localhost
+  vars: 
+    My_list:
+      
+      - {'key': 'Course', 'value': 'Devops'},
+      - {'key': 'Trainer', 'value': 'sivakumar'},
+      - {'key': 'Duration', 'value': '3 months'}
+      
+  tasks:
+  - name: converting dict to list before
+    ansible.builtin.debug:
+      msg: "dict valuses before converting lists {{My_list}}"
+  - name: converting dict to list after
+    ansible.builtin.debug:
+      msg: "dict valuses after converting : {{My_list | items2dict}}"
+   

@@ -4,7 +4,7 @@
   tasks:
   - name: user if he won't declare the variable which is printing 
     ansible.builtin.debug:
-      msg: "given number {{string1 | default("Please declare variable")}}"
+      msg: "given number {{string1 | default('Please declare variable')}}"
     
   
     

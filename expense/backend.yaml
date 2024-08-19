@@ -3,7 +3,7 @@
   become: yes
   tasks:
   - name: disabling the default nodejs
-    ansible.builin.command: "dnf module disable nodejs -y"
+    ansible.builin.command: dnf module disable nodejs -y
   
   - name: enabling the default nodejs20
     ansible.builin.command: dnf module enable nodejs:20 -y
@@ -13,7 +13,7 @@
       name: nodejs
       state: installed
 
-  - name: Create a user 'johnd' with a home directory
+  - name: Create a user 'expense' with a home directory
     ansible.builtin.user:
       name: expense
   

@@ -4,7 +4,7 @@
   tasks:
     - name: printing the loops
       ansible.debug,builtin:
-        msg: {{item}}
+        msg:" {{ item }}"
       loop:
       - LINUX
       - MYSQL

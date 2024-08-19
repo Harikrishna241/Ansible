@@ -5,7 +5,7 @@
     - name: installing the packages
       ansible.builtin.dnf:
         name: " {{ item }}"
-        status: latest
+        state: latest
       loop:
       - mysql
       - python

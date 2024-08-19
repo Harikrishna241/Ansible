@@ -54,7 +54,7 @@
   #    # systemctl daemon-reload
   - name: this is for system deamon reload  
     ansible.builtin.systemd_service:
-      state: restarted
+      #state: restarted
       daemon_reload: true
 
   - name: enabling the backend service

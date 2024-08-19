@@ -17,6 +17,12 @@
     community.mysql.mysql_info:
       login_user: root
       login_password: "{{dbpass}}"
-      
+      login_host: localhost
+      filter: version
+    ignore_errors: yes
+    register: mysql_connection 
+  - name: output message
+    ansible.builtin.debug:
+      msg: "output {{mysql_connection}}""      
 
     

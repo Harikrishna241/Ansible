@@ -26,8 +26,8 @@
   vars: 
     My_list:
       
-      - {'key': 'Course', 'value': 'Devops'},
-      - {'key': 'Trainer', 'value': 'sivakumar'},
+      - {'key': 'Course', 'value': 'Devops'}
+      - {'key': 'Trainer', 'value': 'sivakumar'}
       - {'key': 'Duration', 'value': '3 months'}
       
   tasks:

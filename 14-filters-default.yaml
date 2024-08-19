@@ -19,6 +19,6 @@
       msg: "dict valuses before converting lists {{My_dict}}"
   - name: converting dict to list after
     ansible.builtin.debug:
-      msg: "dict valuses before converting lists {{My_dict | list}}"
+      msg: "dict valuses after converting : {{My_dict | dict2items}}"
   
     

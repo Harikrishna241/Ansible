@@ -1,5 +1,5 @@
 - name: configuring Db using roles 
-  hosts: DB
+  hosts: localhost
   become: yes
   roles:
   - DB

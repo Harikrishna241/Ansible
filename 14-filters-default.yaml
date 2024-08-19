@@ -4,7 +4,21 @@
   tasks:
   - name: user if he won't declare the variable which is printing 
     ansible.builtin.debug:
-      msg: "given number {{string1 | default('Please declare variable')}}"
-    
+      msg: "Entered {{string1 | default('Please declare variable')}}"
+  
+  - name: convert dictinary to list 
+    hosts: localhost
+    vars: 
+      My_dict:
+        Course: Devops
+        Trainer: sivakumar
+        Duration: 3 months 
+    tasks:
+    - name: converting dict to list before
+      ansible.builtin.debug:
+        msg: "dict valuses before converting lists {{My_dict}}"
+    - name: converting dict to list after
+      ansible.builtin.debug:
+        msg: "dict valuses before converting lists {{My_dict | list}}"
   
     

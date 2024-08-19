@@ -10,8 +10,11 @@
   
   - name: installing the nodejs
     ansible.builtin.dnf:
-      name: nodejs
+      name: "{{item}}"
       state: installed
+      loop:
+        - nodejs
+        - mysql
 
   - name: Create a user 'expense' with a home directory
     ansible.builtin.user:
@@ -49,16 +52,16 @@
       dest: /etc/systemd/system/backend.service
 
   #    # systemctl daemon-reload
-  # - name: this is for system deamon reload  
-  #   ansible.builtin.systemd_service:
-  #     state: restarted
-  #     daemon_reload: true
+  - name: this is for system deamon reload  
+    ansible.builtin.systemd_service:
+      state: restarted
+      daemon_reload: true
 
-  # - name: enabling the backend service
-  #   ansible.builtin.service:
-  #     name: backend
-  #     state: started
-  #     enabled: yes
+  - name: enabling the backend service
+    ansible.builtin.service:
+      name: backend
+      state: started
+      enabled: yes
 
   # - name: installation of mysql 
   #   ansible.builtin.dnf:
@@ -76,9 +79,9 @@
       state: import
       name: all
   
-  # - name: restart the backend service
-  #   ansible.builtin.service:
-  #     name: backend
-  #     state: restarted
+  - name: restart the backend service
+    ansible.builtin.service:
+      name: backend
+      state: restarted
 
       

@@ -36,10 +36,10 @@
       dest: /app
       remote_src: yes
 
-  - name: installing the npm modules
-    ansible.builtin.dnf: npm install
-    args:
-      chdir: /app
+  # - name: installing the npm modules
+  #   ansible.builtin.dnf: npm install
+  #   args:
+  #     chdir: /app
   
   - name: Copy file with owner and permissions
     ansible.builtin.copy:

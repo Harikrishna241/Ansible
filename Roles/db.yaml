@@ -2,4 +2,4 @@
   hosts: DB
   become: yes
   roles:
-  - db
+  - DB

@@ -13,10 +13,10 @@
       name: mysqld
       state: started
       enabled: yes
-  - name: check DB connection
-    community.mysql.mysql_db:
-      check_implicit_admin: true
-      login_user: root
-      login_password: {{dbpass}}
+  - name: check DB connection    
+      community.mysql.mysql_info:
+        login_user: root
+        login_password: {{dbpass}}
+        filter: version
 
     

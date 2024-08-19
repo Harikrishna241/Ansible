@@ -1,0 +1,17 @@
+- name: installing the mysql packages 
+  hosts: localhost
+  become: yes
+  vars:
+    dbpass: ExpenseApp@1
+  tasks:
+  - name: installing mysql
+    ansible.builtin.dnf:
+      name: mysql-server
+      state: latest
+  - name: installing mysql
+    ansible.builtin.service:
+      name: mysqld
+      state: started
+      enabled: yes
+  - name: Update mysql root password root accounts 
+    mysql_user: name=root password="{{ dbpass }}" priv="*.*:ALL,GRANT"

@@ -1,0 +1,11 @@
+- name: printing the loops
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: printing the loops
+      ansible.debug,bultin:
+        msg: {{item}}
+      loop:
+      - LINUX
+      - MYSQL
+      - ANSIBLE

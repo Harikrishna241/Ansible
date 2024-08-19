@@ -14,7 +14,11 @@
   - name: Delete content & directory
     ansible.builtin.file:
       state: absent
-      path: /usr/share/nginx/html/*
+      path: /usr/share/nginx/html
+  - name: Delete content & directory
+    ansible.builtin.file:
+      state: directory
+      path: /usr/share/nginx/html
   
   - name: Download backend code to tmp
     ansible.builtin.get_url:
@@ -22,7 +26,7 @@
       dest: /tmp/frontend.zip
       mode: '0440'
   
-  - name: Extract foo.tgz into /var/lib/foo
+  - name: download and unarchive
     ansible.builtin.unarchive:
       src: /tmp/frontend.zip
       dest: /usr/share/nginx/html/
